@@ -1,0 +1,45 @@
+.container.p-4
+  h1 Aquryl
+  .card.p-3
+    details
+      summary 検索する
+      = search_form_for(@q) do |f|
+        .form-group
+          = f.label :scientific_name_cont, '学名'
+          = f.text_field :scientific_name_cont, class: 'form-control'
+        .form-group
+          = f.label :japanese_name_cont, '日本語名'
+          = f.text_field :japanese_name_cont, class: 'form-control'
+        .form-group
+          = f.label :english_name_cont, '英語名'
+          = f.text_field :english_name_cont, class: 'form-control'
+        .form-group
+          = f.label :chinese_name_cont, '中国語名'
+          = f.text_field :chinese_name_cont, class: 'form-control'
+        .form-group
+          = f.label :korean_name_cont, '韓国語名'
+          = f.text_field :korean_name_cont, class: 'form-control'
+        = f.submit '検索', class: 'btn btn-primary'
+        = link_to 'クリア', request.path, class: 'btn btn-secondary'
+
+  - if @species.present?
+    .table-responsive.mt-3
+      table.table.table-striped
+        thead
+          tr
+            th 学名
+            th 日
+            th 英
+            th 中
+            th 韓
+        tbody
+          - @species.each do |item|
+            tr
+              td #{item.scientific_name}
+              td #{item.japanese_name}
+              td #{item.english_name}
+              td #{item.chinese_name}
+              td #{item.korean_name}
+    = paginate @species
+  - else
+    p 種が存在しません。
