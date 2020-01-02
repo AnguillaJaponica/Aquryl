@@ -14,13 +14,9 @@ ActiveRecord::Schema.define(version: 2019_12_29_100624) do
 
   create_table "species", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "scientific_name", default: "", null: false
-    t.string "author_name", default: "", null: false
     t.string "japanese_name", default: ""
-    t.string "japanese_phonetic_spell", default: ""
     t.string "chinese_name", default: ""
-    t.string "chinese_phonetic_spell", default: ""
     t.string "korean_name", default: ""
-    t.string "korean_phonetic_spell", default: ""
     t.string "english_name", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
