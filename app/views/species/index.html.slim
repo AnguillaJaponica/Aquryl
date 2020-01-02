@@ -24,6 +24,7 @@
 
   - if @species.present?
     .table-responsive.mt-3
+      = paginate @species
       table.table.table-striped
         thead
           tr
@@ -32,6 +33,8 @@
             th 英
             th 中
             th 韓
+            th
+            th
         tbody
           - @species.each do |item|
             tr
@@ -45,6 +48,11 @@
                 =link_to "#{item.chinese_name}", species_path(item)
               td
                 =link_to "#{item.korean_name}", species_path(item)
+              td
+                = link_to '編集', edit_species_path(item), class: "btn btn-success btn-xs"
+              td
+                = link_to '削除', species_path(item), data: {:confirm => '本当によろしいですか?'}, :method => :delete, class: "btn btn-danger btn-xs"
     = paginate @species
+    = link_to '新規作成', new_species_path, class: "btn btn-primary"
   - else
     p 種が存在しません。
