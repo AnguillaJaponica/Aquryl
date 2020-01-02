@@ -11,3 +11,7 @@ h1 #{@species.japanese_name}
     dd = @species.chinese_name
     dt 韓名
     dd = @species.korean_name
+  = link_to '編集する', edit_species_path(@species), class: "btn btn-success btn-xs"
+  = link_to '削除する', species_path(@species), data: {:confirm => '本当によろしいですか?'}, :method => :delete, class: "btn btn-danger btn-xs"
+  br
+  = link_to '戻る', root_path, class: 'btn btn-secondary btn-xs'
