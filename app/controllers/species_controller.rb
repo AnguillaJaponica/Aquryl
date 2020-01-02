@@ -7,7 +7,7 @@ class SpeciesController < ApplicationController
   end
 
   def show
-
+    @species = Species.find(params[:id])
   end
 
   def search_params

@@ -35,11 +35,16 @@
         tbody
           - @species.each do |item|
             tr
-              td #{item.scientific_name}
-              td #{item.japanese_name}
-              td #{item.english_name}
-              td #{item.chinese_name}
-              td #{item.korean_name}
+              td
+                =link_to "#{item.scientific_name}", species_path(item)
+              td
+                =link_to "#{item.japanese_name}", species_path(item)
+              td
+                =link_to "#{item.english_name}", species_path(item)
+              td
+                =link_to "#{item.chinese_name}", species_path(item)
+              td
+                =link_to "#{item.korean_name}", species_path(item)
     = paginate @species
   - else
     p 種が存在しません。
