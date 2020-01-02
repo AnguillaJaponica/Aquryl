@@ -1,6 +1,13 @@
 h1 #{@species.japanese_name}
-/.row
-/.col-md-8
-/- if @event.event_image?
-  .thumbnail
-    = image_tag @event.event_image.url
+.col-md-8
+  dl
+    dt 学名
+    dd = @species.scientific_name
+    dt 和名
+    dd = @species.japanese_name
+    dt 英名
+    dd = @species.english_name
+    dt 中名
+    dd = @species.chinese_name
+    dt 韓名
+    dd = @species.korean_name
