@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_12_29_100624) do
 
-  create_table "species", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "species", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "scientific_name", default: "", null: false
     t.string "japanese_name", default: ""
     t.string "chinese_name", default: ""
