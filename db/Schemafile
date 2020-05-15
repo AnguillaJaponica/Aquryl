@@ -1,0 +1,11 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table "species", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  t.string "scientific_name", default: "", null: false
+  t.string "japanese_name", default: ""
+  t.string "chinese_name", default: ""
+  t.string "korean_name", default: ""
+  t.string "english_name", default: ""
+  t.datetime "created_at", precision: 6, null: false
+  t.datetime "updated_at", precision: 6, null: false
+end

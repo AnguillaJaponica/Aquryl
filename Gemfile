@@ -66,3 +66,4 @@ gem 'factory_girl_rails'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem "bootstrap_form"
+gem 'ridgepole'
